@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "app_function": "app.app",
+        "aws_region": "us-east-2",
+        "profile_name": "default",
+        "project_name": "cio-mujer",
+        "runtime": "python3.8",
+        "s3_bucket": "zappa-nu3gau6ci"
+    }
+}

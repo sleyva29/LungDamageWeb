@@ -1,0 +1,4 @@
+flask
+zappa
+aws-sam-cli
+awscli
