@@ -38,7 +38,7 @@
 						</p>
 						<nav>
 							<ul>
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="{{ url_for('predict') }}" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
 								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
@@ -47,9 +47,21 @@
 						</nav>
 					</header>
 
+					<body id="body">
+
+					</body>
+
 				<!-- Footer -->
 					<footer id="footer">
-						<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+						<p>
+							{% if prediction==1 %}
+							Daño pulmonar 
+							{% elif prediction==0%}
+							No daño pulmonar
+							{% else %}
+							NONE
+							{% endif %}
+						</p>
 					</footer>
 
 			</div>
