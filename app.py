@@ -21,8 +21,8 @@ def predict():
     # TODO Validar los datos que llegan
 
     model = load_model("final_rf_poster_cio")
-    data = pd.DataFrame(np.array([[int(cvf), np.nan, int(edad), int(sexo), int(ef), 5]]), 
-                        columns=["CVF", "Porcentaje", "Edad", "Sexo", "Estado del fumador", "Semanas"])
+    data = pd.DataFrame(np.array([[int(cvf), int(edad), int(sexo), int(ef)]]), 
+                        columns=["CVF", "Edad", "Sexo", "Estado del fumador"])
     result = model.predict(data)[0]
 
     return {"prediction": int(result)}, 200
@@ -30,4 +30,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
