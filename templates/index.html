@@ -12,6 +12,9 @@
 		<link rel="stylesheet" href="static/css/main.css" />
 		<noscript><link rel="stylesheet" href="static/css/noscript.css" /></noscript>
 		<script type="text/javascript" src="/static/js/utils.js"></script>
+		<script src="https://kit.fontawesome.com/807e393865.js" crossorigin="anonymous"></script>
+		<link rel="icon" href="pulmones.png">
+	<!--	<a href="https://www.flaticon.es/iconos-gratis/pulmon" title="pulmon iconos">Pulmon iconos creados por SBTS2018 - Flaticon</a>-->
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -24,35 +27,33 @@
 					<p></p>
 					<h2>
 						Introduzca los campos mostrados a continuación para 
-						determinar el nivel de daño pulmonar de su paciente.
+						determinar si existe daño pulmonar de su paciente.
 					</h2>
 					<p></p>
-					<p>
-						Sheila Leyva-Lopez 
-						&nbsp;&bull;&nbsp; 
-						Gerardo Hernandez-Nava 
-						&nbsp;&bull;&nbsp; 
-						Enrique Mena-Camilo 
-						&nbsp;&bull;&nbsp; 
-						Sebastian Salazar-Colores
-					</p>
+
 					<nav>
-						<ul>
-							<li>CVF</li>
-							<li>Edad</li>
+					<!--	<ul>
+							<li><i class="fa-regular fa-lungs"></i>CVF</li>
+							<li><i class="fa-regular fa-monitor-waveform"></i>Edad</li>
 							<li>Genero</li>
-							<li>Fumador</li>
-						</ul>
+							<li><i class="fa-regular fa-joint"></i>Fumador</li>
+						</ul>-->
 						<ul>
-							<li><input type="number" id="cvf" style="width: 4rem;"></li>
-							<li><input type="number" id="age" style="width: 4rem;"></li>
-							<li><input list="gender_options" id="gender" style="width: 4rem;"></li>
+							<label for="">CVF</label>
+							<li><input type="number" id="cvf"  placeholder="ml"></li>
+							<label for="">Age</label>
+							<li><input type="number" id="age"   placeholder="--"></li>
+							<label for="">Gender</label>
+							<li><input list="gender_options" id="gender"   placeholder="--"></li>
+		
 							<datalist id="gender_options">
 								<option value=""></option>
 								<option value="0">Femenino</option>
 								<option value="1">Masculino</option>
 							</datalist>
-							<li><input list="smoke_options" id="smoke" style="width: 4rem;"></li>
+							<label for="">Smoke</label>
+							<li><input list="smoke_options" id="smoke"  placeholder="--"></li>
+							
 							<datalist id="smoke_options">
 								<option value=""></option>
 								<option value="0">Sí, actualmente</option>
@@ -61,16 +62,29 @@
 							</datalist>
 						</ul>
 						<ul>
-							<li><a class="icon brands fa-twitter" onclick="predict()"><span class="label">Twitter</span></a></li>
+							<button type="submit" onclick="predict()" > ¿Presenta daño pulmonar?</button>
+							<!--<li><a class="icon brands fa-twitter" onclick="predict()"><span class="button">Twitter</span></a></li>-->
 						</ul>
+						
 						<ul>
-							<li><input type="text" readonly id="result"></li>
+							
+							<li><output type="text" readonly id="result"></li>
+							<!--<li><output type="text" >Resultado</li>-->
 						</ul>
 					</nav>
 				</header>
 
 
 				<footer id="footer">
+					<p>
+					Sheila Leyva-Lopez 
+					&nbsp;&bull;&nbsp; 
+					Gerardo Hernandez-Nava 
+					&nbsp;&bull;&nbsp; 
+					Enrique Mena-Camilo 
+					&nbsp;&bull;&nbsp; 
+					Sebastian Salazar-Colores
+					</p>
 
 				</footer>
 
