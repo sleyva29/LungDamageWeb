@@ -280,7 +280,7 @@ output{
 		left: 0;
 		opacity: 0;
 		position: fixed;
-		top: 0;
+		/* top: 0; */
 		width: 100%;
 	}
 
@@ -307,7 +307,7 @@ output{
 		left: 0;
 		opacity: 1;
 		position: fixed;
-		top: 1;
+		/* top: 1; */
 	}
 
 	@-moz-keyframes bg {
@@ -800,9 +800,8 @@ output{
 		background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
 		bottom: 0;
 		cursor: default;
-		height: 6em;
+		height: auto;
 		left: 0;
-		line-height: 8em;
 		position: absolute;
 		text-align: center;
 		width: 100%;
@@ -1059,6 +1058,10 @@ output{
 		}
 
 	/* Header */
+
+		#header {
+			top: -10%;
+		}
 
 		#header h1 {
 			font-size: 2.5em;
