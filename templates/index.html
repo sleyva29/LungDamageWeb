@@ -24,7 +24,7 @@
 				<header id="header">
 					<h1>Clasificación de Daño Pulmonar</h1>
 					<p></p>
-					
+
 					<h2>
 						Introduzca los campos mostrados a continuación para 
 						determinar si existe daño pulmonar de su paciente.
@@ -33,27 +33,26 @@
 
 					<nav>
 						<ul>
-							<label for="">CVF</label>
-							<li><input type="number" id="cvf"  placeholder="ml"></li>
-							<label for="">Age</label>
-							<li><input type="number" id="age"   placeholder="--"></li>
-							<label for="">Gender</label>
-							<li><input list="gender_options" id="gender"   placeholder="--"></li>
-		
-							<datalist id="gender_options">
-								<option value=""></option>
-								<option value="0">Femenino</option>
-								<option value="1">Masculino</option>
-							</datalist>
-							<label for="">Smoke</label>
-							<li><input list="smoke_options" id="smoke"  placeholder="--"></li>
+							<label for="cvf">CVF</label>
+							<li><input type="number" min="1" max="5000" id="cvf" placeholder="ml" required></li>
+
+							<label for="age">Edad</label>
+							<li><input type="number" min="1" max="99" id="age" placeholder="--" required></li>
+
+							<label for="gender">Sexo</label>
+							<li><select id="gender" style="width: auto;" required>
+								<option class="optioncolor" data-value="-1" disabled selected hidden>--</option>
+								<option class="optioncolor" data-value="0">Femenino</option>
+								<option class="optioncolor" data-value="1">Masculino</option>
+							</select></li>
 							
-							<datalist id="smoke_options">
-								<option value=""></option>
-								<option value="0">Sí, actualmente</option>
-								<option value="1">No, nunca</option>
-								<option value="2">Sí, anteriormente</option>
-							</datalist>
+							<label for="smoke">Fumador</label>
+							<li><select id="smoke" style="width: auto;" required>
+								<option class="optioncolor" data-value="-1" disabled selected hidden>--</option>
+								<option class="optioncolor" data-value="0">Sí, actualmente</option>
+								<option class="optioncolor" data-value="1">No, nunca</option>
+								<option class="optioncolor" data-value="2">Sí, anteriormente</option>
+							</select></li>
 						</ul>
 						<ul>
 							<button type="submit" onclick="predict()">¿Presenta daño pulmonar?</button>

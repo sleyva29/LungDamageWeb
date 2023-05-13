@@ -59,7 +59,7 @@ mark {
 	background-color: transparent;
 	color: inherit;
 }
-input {
+input, select {
 	background: none;
 	color: aliceblue;
 	font-size: 18px;
@@ -72,7 +72,7 @@ input {
 	border-bottom: 1px solid var(--colorTextos);
 }
 ::placeholder{
-    color: #22262c;
+    color: #fff;
 	font-size: 18px;
 }
 :focus {
@@ -171,6 +171,15 @@ output{
 		font-weight: 300 !important;
 		letter-spacing: -0.025em;
 		line-height: 1.75em;
+		background-color: rgba(124, 185, 209, 0.50);
+	}
+
+	.optioncolor {
+		background-color: rgb(124, 185, 209);
+		color: #fff;
+		opacity: 0.5;
+		-moz-opacity:0.5;
+		-webkit-opacity:0.5;
 	}
 
 	a {
