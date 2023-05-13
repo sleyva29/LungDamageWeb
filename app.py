@@ -1,4 +1,6 @@
-from flask import Flask, render_template, redirect, url_for, request
+import pandas as pd
+from pycaret.classification import load_model
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -10,9 +12,6 @@ def hello_cio():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    import pandas as pd
-    import numpy as np
-    from pycaret.classification import load_model
 
     cvf = request.json.get("cvf", None)
     edad = request.json.get("age", None)
@@ -21,7 +20,7 @@ def predict():
     # TODO Validar los datos que llegan
 
     model = load_model("final_rf_poster_cio")
-    data = pd.DataFrame(np.array([[int(cvf), int(edad), int(sexo), int(ef)]]), 
+    data = pd.DataFrame([[int(cvf), int(edad), int(sexo), int(ef)]], 
                         columns=["CVF", "Edad", "Sexo", "Estado del fumador"])
     result = model.predict(data)[0]
 

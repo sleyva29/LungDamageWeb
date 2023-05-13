@@ -110,7 +110,7 @@ button{
 	border: none;
 	border-radius: 12px;
 	display: block;
-	width: 30%;
+	width: auto;
 	margin: 10px auto;
 	color: #fff;
 	height: 40px;
@@ -129,8 +129,8 @@ output{
 	border: none;
 	border-radius: 12px;
 	display: flex;
-	width: 50%;
-	margin: 25px;
+	width: auto;
+	margin: 25px 0;
 	color: #fff;
 	height: 40px;
 	font-size: 14px;
