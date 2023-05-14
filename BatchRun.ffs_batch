@@ -24,6 +24,9 @@
             <Item>\zappa_settings.json</Item>
             <Item>\venv\</Item>
             <Item>*.log |</Item>
+            <Item>.git\</Item>
+            <Item>\__pycache__\</Item>
+            <Item>\app.sock</Item>
         </Exclude>
         <SizeMin Unit="None">0</SizeMin>
         <SizeMax Unit="None">0</SizeMax>
