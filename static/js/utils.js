@@ -18,7 +18,11 @@ function predict(){
     let url = "/predict";
 
     if (!valid_cvf || !valid_age || gender == 0 || smoke == 0){
-        alert("Por lo menos un campo no es válido, por favor verifique los datos ingresados.");
+        Swal.fire({
+            icon: "error",
+            title: 'Datos inválidos',
+            text: "Al menos un campo contiene datos inválidos. Por favor, verifique los datos ingresados.",
+          });
         return;
     }
 
