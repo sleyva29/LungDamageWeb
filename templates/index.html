@@ -41,21 +41,21 @@
 
 							<label for="gender">Sexo</label>
 							<li><select id="gender" style="width: auto;" required>
-								<option class="optioncolor" value="-1" disabled selected hidden>--</option>
-								<option class="optioncolor" value="0">Femenino</option>
-								<option class="optioncolor" value="1">Masculino</option>
+								<option class="optioncolor" value="" disabled selected hidden>--</option>
+								<option class="optioncolor" value="1">Femenino</option>
+								<option class="optioncolor" value="2">Masculino</option>
 							</select></li>
 							
 							<label for="smoke">Fumador</label>
 							<li><select id="smoke" style="width: auto;" required>
-								<option class="optioncolor" value="-1" disabled selected hidden>--</option>
-								<option class="optioncolor" value="0">Sí, actualmente</option>
-								<option class="optioncolor" value="1">No, nunca</option>
-								<option class="optioncolor" value="2">Sí, anteriormente</option>
+								<option class="optioncolor" value="" disabled selected hidden>--</option>
+								<option class="optioncolor" value="1">Sí, actualmente</option>
+								<option class="optioncolor" value="2">No, nunca</option>
+								<option class="optioncolor" value="3">Sí, anteriormente</option>
 							</select></li>
 						</ul>
 						<ul>
-							<button type="submit" onclick="predict()">¿Presenta daño pulmonar?</button>
+							<button type="button" onclick="predict()">¿Presenta daño pulmonar?</button>
 						</ul>
 						<ul>
 							<div style="text-align: center;">

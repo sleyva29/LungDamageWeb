@@ -83,11 +83,24 @@ input, select {
 :focus {
 	outline: 1px solid #2f7b99;
 }
+:invalid {
+	border: 2px solid #ff0000;
+	animation: shake 0.5s;
+}
+:invalid:required{
+	border: 2px solid #ff0000;
+	animation: shake 0.5s;
+}
 .preference {
     display: flex;
     justify-content: space-between;
     width: 60%;
     margin: 0.5rem;
+}
+@keyframes shake {
+	25%{transform:translateX(-3px);}
+	50%{transform:translateX(3px);}
+	100%{transform:translateX(-3px);}
 }
 
 input:focus{
