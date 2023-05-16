@@ -8,6 +8,20 @@ async function getData(url, data) {
     })
 }
 
+function displayLoading() {
+    let loader = document.querySelector("#loading");
+    loader.classList.add("display");
+    // to stop loading after some time
+    setTimeout(() => {
+        loader.classList.remove("display");
+    }, 5000);
+}
+
+function hideLoading() {
+    let loader = document.querySelector("#loading");
+    loader.classList.remove("display");
+}
+
 function predict(){
     let valid_cvf = document.getElementById("cvf").checkValidity();
     let valid_age = document.getElementById("age").checkValidity();
@@ -25,6 +39,8 @@ function predict(){
           });
         return;
     }
+    
+    displayLoading()
 
     gender = gender - 1;
     smoke = smoke - 1;
@@ -32,6 +48,7 @@ function predict(){
     getData(url, {cvf: cvf, age: age, gender: gender, smoke: smoke})
         .then(response => response.json()
             .then(json => {
+                hideLoading()
                 if (json["prediction"] == 0){
                     document.getElementById("result").value = "No daño pulmonar";
                 } else {
