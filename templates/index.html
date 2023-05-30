@@ -11,6 +11,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="static/css/main.css" />
 		<noscript><link rel="stylesheet" href="static/css/noscript.css" /></noscript>
+		<script type="text/javascript" src="static/js/utils.js"></script>
+		<script src="https://kit.fontawesome.com/807e393865.js" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<link rel="icon" href="static/images/pulmones.png">
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -18,39 +22,62 @@
 			<div id="overlay"></div>
 			<div id="main">
 
-				<!-- Header -->
-					<header id="header">
-						<h1>Clasificación de Daño Pulmonar</h1>
-						<p></p>
-						<h2>
-							Introduzca los campos mostrados a continuación para 
-							determinar el nivel de daño pulmonar de su paciente.
-						</h2>
-						<p></p>
-						<p>
-							Sheila Leyva-Lopez 
-							&nbsp;&bull;&nbsp; 
-							Gerardo Hernandez-Nava 
-							&nbsp;&bull;&nbsp; 
-							Enrique Mena-Camilo 
-							&nbsp;&bull;&nbsp; 
-							Sebastian Salazar-Colores
-						</p>
-						<nav>
-							<ul>
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-						</nav>
-					</header>
+				<header id="header">
+					<h1>Clasificación de Daño Pulmonar</h1>
+					<p></p>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-					</footer>
+					<h2>
+						Introduzca los campos mostrados a continuación para 
+						determinar si existe daño pulmonar de su paciente.
+					</h2>
+					<p></p>
+
+					<nav>
+						<ul>
+							<label for="cvf">CVF</label>
+							<li><input type="number" min="1" max="5000" id="cvf" placeholder="ml" required></li>
+
+							<label for="age">Edad</label>
+							<li><input type="number" min="1" max="99" id="age" placeholder="--" required></li>
+
+							<label for="gender">Sexo</label>
+							<li><select id="gender" style="width: auto;" required>
+								<option class="optioncolor" value="" disabled selected hidden>--</option>
+								<option class="optioncolor" value="1">Femenino</option>
+								<option class="optioncolor" value="2">Masculino</option>
+							</select></li>
+							
+							<label for="smoke">Fumador</label>
+							<li><select id="smoke" style="width: auto;" required>
+								<option class="optioncolor" value="" disabled selected hidden>--</option>
+								<option class="optioncolor" value="1">Sí, actualmente</option>
+								<option class="optioncolor" value="2">No, nunca</option>
+								<option class="optioncolor" value="3">Sí, anteriormente</option>
+							</select></li>
+						</ul>
+						<ul>
+							<button type="button" onclick="predict()">¿Presenta daño pulmonar?</button>
+						</ul>
+						<div id="loading"></div>
+						<ul>
+							<div style="text-align: center;">
+								<output type="text" id="result"></output>
+							</div>
+						</ul>
+					</nav>
+				</header>
+
+				<footer id="footer">
+					<p>
+					Sheila Leyva-Lopez 
+					&nbsp;&bull;&nbsp; 
+					Gerardo Hernandez-Nava 
+					&nbsp;&bull;&nbsp; 
+					Enrique Mena-Camilo 
+					&nbsp;&bull;&nbsp; 
+					Sebastian Salazar-Colores
+					</p>
+				</footer>
 
 			</div>
 		</div>
